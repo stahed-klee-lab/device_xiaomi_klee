@@ -127,7 +127,7 @@ TARGET_COPY_OUT_VENDOR_DLKM := vendor_dlkm
 ifeq ($(PRODUCT_NAME),halcyon_klee)
 -include vendor/halcyon/config/BoardConfigReservedSize.mk
 else
--include vendor/lineage/config/BoardConfigReservedSize.mk
+-include vendor/alpha/config/BoardConfigReservedSize.mk
 endif
 
 # Platform

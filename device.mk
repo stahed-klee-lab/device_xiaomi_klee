@@ -15,11 +15,6 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota/launch_with_ven
 # Project ID Quota
 $(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
 
-# Sign keys
-ifneq ($(PRODUCT_NAME),halcyon_klee)
--include vendor/private/keys/keys.mk
-endif
-
 # Rootdir
 PRODUCT_PACKAGES += \
     init.connectivity.rc \
@@ -154,13 +149,6 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.software.midi.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.midi.xml
 
 $(call soong_config_set_bool,android_hardware_audio,skip_speaker_layout_channel_mask_field,true)
-
-# Axion Performance Mode
-PERF_GOV_SUPPORTED := true
-PERF_DEFAULT_GOV := schedutil
-
-GPU_FREQS_PATH := /sys/class/devfreq/13000000.mali/available_frequencies
-GPU_MIN_FREQ_PATH := /sys/class/devfreq/13000000.mali/min_freq
 
 # Bluetooth
 PRODUCT_PACKAGES += \

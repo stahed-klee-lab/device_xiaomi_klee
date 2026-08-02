@@ -8,8 +8,8 @@
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit_only.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
-# Inherit some common Lineage stuff.
-$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+# Inherit some common AlphaDroid stuff.
+$(call inherit-product, vendor/alpha/config/common_full_phone.mk)
 
 # Inherit from klee device
 $(call inherit-product, device/xiaomi/klee/device.mk)
@@ -17,9 +17,42 @@ $(call inherit-product, device/xiaomi/klee/device.mk)
 # Lineage build flags
 PRODUCT_CHECK_PREBUILT_MAX_PAGE_SIZE := false
 
+# Device config
+TARGET_HAS_UDFPS := true
+TARGET_SUPPORTS_BLUR := true
+TARGET_EXCLUDES_AUDIOFX := true
+TARGET_FACE_UNLOCK_SUPPORTED := true
+
+# Build config
+# TARGET_BUILD_PACKAGE options:
+# 1 - vanilla (default)
+# 2 - microg
+# 3 - gapps
+TARGET_BUILD_PACKAGE := 3
+
+TARGET_INCLUDE_GOOGLE_COMMS := true
+TARGET_INCLUDE_PIXEL_LAUNCHER := true
+TARGET_SUPPORTS_QUICK_TAP := true
+TARGET_SUPPORTS_CALL_RECORDING := false
+TARGET_INCLUDE_STOCK_ARCORE := true
+TARGET_INCLUDE_LIVE_WALLPAPERS := false
+TARGET_SUPPORTS_GOOGLE_RECORDER := true
+
+# Debugging
+TARGET_INCLUDE_MATLOG := true
+WITH_ADB_INSECURE := false
+
+# Extras
+TARGET_INCLUDE_SIMPLE_TUNE := true
+TARGET_PREBUILT_BCR := true
+
+# Maintainer
+ALPHA_BUILD_TYPE := Official
+ALPHA_MAINTAINER := Javi
+
 # Device manufacturer
 PRODUCT_DEVICE := klee
-PRODUCT_NAME := lineage_klee
+PRODUCT_NAME := alpha_klee
 PRODUCT_BRAND := POCO
 PRODUCT_MODEL := 2511FPC34G
 PRODUCT_MANUFACTURER := xiaomi
