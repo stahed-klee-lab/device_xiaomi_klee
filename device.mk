@@ -55,6 +55,7 @@ PRODUCT_SOONG_NAMESPACES += \
     hardware/mediatek/libaedv \
     hardware/mediatek/libmtkperf_client \
     hardware/mediatek/wlan/wifi_hal \
+    hardware/pixelworks/interfaces \
     hardware/xiaomi
 
 # Linker config
