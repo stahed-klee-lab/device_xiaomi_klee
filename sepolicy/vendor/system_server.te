@@ -1,3 +1,6 @@
 binder_call(system_server, vendor_hal_citsensorservice_xiaomi_default)
 binder_call(system_server, hal_touchfeature_xiaomi_default)
 allow system_server sensors_device:chr_file rw_file_perms;
+
+# Mali platform service
+allow system_server mtk_hal_mali_platform_default_service:service_manager find;
