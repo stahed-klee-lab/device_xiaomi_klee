@@ -5,4 +5,4 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/alpha_klee.mk
+    $(LOCAL_DIR)/lineage_klee.mk
